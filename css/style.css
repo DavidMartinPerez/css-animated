@@ -1,0 +1,286 @@
+body{
+    margin:0px;
+    padding: 0px;
+}
+
+/*
+##################################
+####### LOADING - Circle #########
+##################################
+*/
+
+.loading__capa{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+.loader{
+    position: relative;
+    top: 30px;
+    width: 125px;
+    height: 125px;
+    border: 12px solid #fafafa;
+    border-radius: 50%;
+    border-top-color: lightcoral;
+    /*Para subcontendor*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    animation: girar 1.5s linear infinite;
+}
+.subloader{
+    width: 100px;
+    height: 100px;
+    border: 5px solid #fafafa;
+    border-radius: 50%;
+    border-top-color: lightseagreen;
+    animation: opuesto 0.7s linear infinite;
+}
+@keyframes girar {
+    0% {
+        transform: rotate(0deg);
+        border-top-color: lightcoral;
+    }
+    25% {
+        border-top-color: lightseagreen;
+    }
+    50%{
+        border-top-color: lightgreen;
+    }
+    75% {
+        border-top-color: lightpink;
+    }
+    100% {
+        transform: rotate(360deg);
+        border-top-color: lightcoral;
+    }
+}
+@keyframes opuesto {
+    0% {
+        transform: rotate(360deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+/*
+##################################
+###### ./LOADING - Circle ########
+##################################
+*/
+
+/*
+##################################
+###### Close menú animated #######
+##################################
+*/
+
+.hamburger{
+    margin: 0 auto;
+    top:150px;
+    position: relative;
+    height: 30px;
+    width: 50px;
+}
+
+.hamburger span {
+    position: absolute;
+    background-color: #000;
+    width: 50px;
+    height: 10px;
+    transition: 0.6s 0.6s top, 0.6s 0.6s bottom, 0.6s transform;
+}
+
+.hamburger:hover span{
+    transition: 0.6s top, 0.6s bottom, 0.6s 0.6s transform;
+}
+
+.hamburger span:nth-of-type(1){
+    top:0;
+}
+.hamburger span:nth-of-type(2){
+    bottom:0;
+}
+.hamburger span:nth-of-type(3){
+    height: 5px;
+    bottom:12px;
+}
+
+.hamburger:hover span:nth-of-type(1){
+    top:10px;
+    transform: rotate(40deg)
+}
+.hamburger:hover span:nth-of-type(2){
+    bottom:10px;
+    transform: rotate(-40deg)
+}
+.hamburger:hover span:nth-of-type(3){
+    bottom:10px;
+    opacity: 0;
+}
+
+
+/*
+##################################
+##### ./Close menú animated ######
+##################################
+*/
+
+/*
+##################################
+######### Progress bar ###########
+##################################
+*/
+.progress{
+    margin: 0 auto;
+    top:150px;
+    position: relative;
+    width: 300px;
+    height: 50px;
+}
+.bar{
+    background: #fff;
+    border: 4px solid #21443C;
+    width: 300px;
+    height: 50px;
+}
+.bar::after{
+    content: "";
+    display: block;
+    background-color: #40b549;
+    height: 50px;
+    animation: 10s loadingBar;
+}
+
+@keyframes loadingBar {
+    0% {
+        width: 0;
+    }
+    50% {
+        width: 50%;
+    }
+    58% {
+        width: 50%;
+    }
+    90%{
+        width: 98%;
+    }
+    98%{
+        width: 98%;
+    }
+    100%{
+        width: 100%;
+    }
+}
+/*
+##################################
+######## ./Progress bar ##########
+##################################
+*/
+
+/*
+##################################
+########## Read More #############
+##################################
+*/
+
+.read-more{
+    width: 50px;
+    height: 50px;
+    background-color: #ce2829;
+    border-radius: 50px;
+    color: #fff;
+    position: relative;
+    transition: width 0.7s 0.3s;
+    margin: 0 auto;
+    top: 150px;
+}
+.read-more i{
+    position: absolute;
+    left:0;
+    right: 0;
+    text-align: center;
+    padding: 10px;
+    font-size: 30px;
+    transition: opacity 0.7s 0.7s;
+}
+.read-more::after{
+    content: "Read More";
+    display: inline-block;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding: 15px 0;
+    padding-bottom: 0;
+    width: 100%;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+.read-more:hover{
+    width: 200px;
+    transition: width 0.7s
+}
+.read-more:hover i{
+    transition: opacity 0.7s;
+    opacity: 0;
+}
+.read-more:hover::after{
+    opacity: 1;
+    transition: opacity 0.7s 0.7s;
+}
+
+/*
+##################################
+######### ./Read More  ###########
+##################################
+*/
+
+/*
+##################################
+####### Rotate button  ###########
+##################################
+*/
+
+.rotate-button{
+    background-color: #709af3;
+    padding: 10px;
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+}
+.rotate-button i{
+    color: #fff;
+    font-size: 32px;
+    animation: anim 2s infinite;
+}
+@keyframes anim{
+    0%{
+        padding: 20px;
+    }
+    25%{
+        transform: rotate(0deg)
+    }
+    50%{
+        padding: 30px;
+        transform: rotate(180deg)
+    }
+    75%{
+        transform: rotate(0deg)
+    }
+    100%{
+        padding: 20px;
+        transform: rotate(0deg)
+    }
+}
+
+/*
+##################################
+####### ./Rotate button  #########
+##################################
+*/
